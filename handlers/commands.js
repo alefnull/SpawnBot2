@@ -17,7 +17,7 @@ module.exports = (client) => {
 			}
 		}
 	}
-	log_info(`Loaded ${blue(cmd_list.length)} command(s): ${yellow(cmd_list.join(', '))}`);
+	log_info(`Registered ${blue(cmd_list.length)} command(s): ${yellow(cmd_list.join(', '))}`);
 
 	if (existsSync('./data/custom.json')) {
 		const custom = require('../data/custom.json');
@@ -26,5 +26,5 @@ module.exports = (client) => {
 			cust_cmd_list.push(command);
 		}
 	}
-	log_info(`Loaded ${blue(cust_cmd_list.length)} custom command(s): ${yellow(cust_cmd_list.join(', '))}`);
+	log_info(`Registered ${blue(cust_cmd_list.length)} custom command(s): ${yellow(cust_cmd_list.join(', '))}`);
 }

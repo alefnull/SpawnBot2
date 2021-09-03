@@ -19,5 +19,5 @@ module.exports = (client) => {
 			}
 		}
 	}
-	log_info(`Loaded ${blue(evnt_list.length)} event(s): ${yellow(evnt_list.join(', '))}`);
+	log_info(`Registered ${blue(evnt_list.length)} event(s): ${yellow(evnt_list.join(', '))}`);
 }
