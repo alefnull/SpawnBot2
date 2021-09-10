@@ -3,7 +3,7 @@ module.exports = {
 	aliases: [],
 	permission: "ADMINISTRATOR",
 	description: "Emit a member remove event",
-	run(client, message, args) {
+	run(client, message) {
 		client.emit("guildMemberRemove", message.member);
 	}
-}
+};

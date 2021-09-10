@@ -29,4 +29,4 @@ module.exports = {
 			.setThumbnail('https://lmgtfy.app/assets/SERP/lmgtfy_logo-b222a421fb6cf257985abfab188be7d6746866850efe2a800a3e57052e1a2411.png');
 		msg.channel.send({ embeds: [embed] });
 	}
-}
+};

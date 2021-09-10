@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	// 'clear' command
@@ -37,4 +37,4 @@ module.exports = {
 		// delete the confirmation message after 3 seconds
 		setTimeout(() => m.delete(), 3000);
 	}
-}
+};

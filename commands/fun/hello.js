@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['hi', 'hey'],
 	description: 'Say Hello',
 	permission: 'SEND_MESSAGES',
-	run(client, msg, args) {
+	run(client, msg) {
 		msg.reply(`Hello, ${msg.author.username}!`);
 	}
-}
+};

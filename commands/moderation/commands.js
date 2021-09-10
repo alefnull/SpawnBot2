@@ -36,7 +36,7 @@ module.exports = {
 
 			// return a list of all the custom commands
 			const list = [];
-			for (const [command, response] of client.custom_commands) {
+			for (const [command] of client.custom_commands) {
 				list.push(`${command}`);
 			}
 			embed.setDescription(`\`${list.join(', ')}\``)
@@ -46,7 +46,7 @@ module.exports = {
 
 		// vars: subcmd (the subcommand), custcmd (the custom command), resp (the response)
 		const subcmd = args[0].toLowerCase();
-		const custcmd = args[1].toLowerCase();
+		const custcmd = (args[1] || '').toLowerCase();
 		const resp = args.slice(2).join(' ');
 
 		// use switch statement to handle different commands
@@ -81,6 +81,8 @@ module.exports = {
 				return msg.channel.send({ embeds: [embed] });
 
 			case 'remove':
+			case 'delete':
+			case 'del':
 				// check if the user has specified a command
 				if (!custcmd) {
 					embed.setDescription(`Please specify a command to remove.`)
@@ -119,7 +121,7 @@ module.exports = {
 
 				// return a list of all the custom commands
 				const list = [];
-				for (const [command, response] of client.custom_commands) {
+				for (const [command] of client.custom_commands) {
 					list.push(`${command}`);
 				}
 				embed.setDescription(`\`${list.join(', ')}\``)
@@ -127,4 +129,4 @@ module.exports = {
 				return msg.channel.send({ embeds: [embed] });
 		}
 	}
-}
+};

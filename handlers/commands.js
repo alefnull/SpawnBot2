@@ -1,6 +1,6 @@
 const { readdirSync, existsSync } = require('fs');
 const { blue, yellow } = require('chalk');
-const { log, log_info, log_warn, log_error } = require('../lib/log');
+const { log_info } = require('../lib/log');
 
 module.exports = (client) => {
 	let cmd_list = [];
@@ -27,4 +27,4 @@ module.exports = (client) => {
 		}
 	}
 	log_info(`Registered ${blue(cust_cmd_list.length)} custom command(s): ${yellow(cust_cmd_list.join(', '))}`);
-}
+};

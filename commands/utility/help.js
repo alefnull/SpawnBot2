@@ -8,8 +8,8 @@ module.exports = {
 	aliases: ['list'],
 	description: 'Display a list of all commands',
 	permission: 'SEND_MESSAGES',
-	run(client, msg, args) {
-		const excluded = ['emit_member_add', 'emit_member_remove']
+	run(client, msg) {
+		const excluded = ['emit_member_add', 'emit_member_remove'];
 
 		// get list of all commands, not including duplicates
 		let commands = client.commands.filter(c => c.name !== 'help');
@@ -22,7 +22,9 @@ module.exports = {
 
 		// strip out duplicates
 		commands = commands.reduce((acc, cur) => {
-			if (!acc.some(c => c.name === cur.name)) acc.push(cur);
+			if (!acc.some(c => c.name === cur.name)) {
+				acc.push(cur);
+			}
 			return acc;
 		}, []);
 
@@ -32,11 +34,13 @@ module.exports = {
 
 		commands.forEach(cmd => {
 			let aliases = '';
-			cmd.aliases.forEach(alias => {
-				aliases += `${alias}, `;
-			});
-			aliases = aliases.slice(0, -2);
-			embed.addField(`${prefix}${cmd.name} ${cmd.aliases.length > 0 ? `(${aliases})` : ''}`, cmd.description);
+			if (cmd.aliases) {
+				cmd.aliases.forEach(alias => {
+					aliases += `${alias}, `;
+				});
+				aliases = aliases.slice(0, -2);
+				embed.addField(`${prefix}${cmd.name} ${cmd.aliases.length > 0 ? `(${aliases})` : ''}`, cmd.description);
+			}
 		});
 
 		if (custom_commands.length > 0) {
@@ -50,4 +54,4 @@ module.exports = {
 
 		msg.channel.send({ embeds: [embed] });
 	}
-}
+};

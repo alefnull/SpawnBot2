@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs');
-const { log, log_info, log_warn, log_error } = require('../lib/log');
+const { log_info } = require('../lib/log');
 const { blue, yellow } = require('chalk');
 
 module.exports = (client) => {
@@ -20,4 +20,4 @@ module.exports = (client) => {
 		}
 	}
 	log_info(`Registered ${blue(evnt_list.length)} event(s): ${yellow(evnt_list.join(', '))}`);
-}
+};

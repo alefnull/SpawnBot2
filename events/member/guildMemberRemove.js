@@ -1,8 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const { server_settings } = require('../../data/config.json');
-const dfmt = require('../../lib/dfmt')
 const { blue, magenta } = require('chalk');
-const { log, log_info, log_warn, log_error } = require('../../lib/log');
+const { log_info } = require('../../lib/log');
 
 module.exports = {
 	name: 'guildMemberRemove',
@@ -14,7 +13,7 @@ module.exports = {
 		const server = server_settings[member.guild.name];
 
 		// log the event to the console
-		log_info(`${blue('[' + message.guild.name + ']')} ${magenta(message.author.tag)} has left the server.`);
+		log_info(`${blue('[' + member.guild.name + ']')} ${magenta(member.user.tag)} has left the server.`);
 
 		const embed_log = new MessageEmbed()
 			.setColor('#b00000')
@@ -23,4 +22,4 @@ module.exports = {
 
 		member.guild.channels.cache.find(chan => chan.name === server.logging_channel).send({ embeds: [embed_log] });
 	}
-}
+};

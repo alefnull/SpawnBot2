@@ -3,7 +3,7 @@ module.exports = {
 	aliases: [],
 	permission: "ADMINISTRATOR",
 	description: "Emit a member add event",
-	run(client, message, args) {
+	run(client, message) {
 		client.emit("guildMemberAdd", message.member);
 	}
-}
+};

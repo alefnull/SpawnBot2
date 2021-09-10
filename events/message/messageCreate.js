@@ -1,19 +1,17 @@
 const { magenta, yellow, blue, red } = require('chalk');
-const { Client, Message, MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { prefix, server_settings } = require('../../data/config.json');
-const { log, log_info, log_warn, log_error } = require('../../lib/log');
+const { log_info, log_error } = require('../../lib/log');
 
 module.exports = {
 	name: 'messageCreate',
 	description: 'triggered every time a message is sent in a channel',
-	/**
-	 * @param {Message} message
-	 * @param {Client} client
-	 */
 	async run(message, client) {
 		const server = server_settings[message.guild.name];
 		// make sure we're only monitoring one of the active servers from config.json
-		if (!server_settings[message.guild.name].active) return;
+		if (!server_settings[message.guild.name].active) {
+			return;
+		}
 
 		// make sure channel restrictions are disabled or the message is from an allowed channel
 		if (server.channel_restrictions) {
@@ -23,7 +21,9 @@ module.exports = {
 		}
 
 		// ignore self
-		if (message.author.bot) return;
+		if (message.author.bot) {
+			return;
+		}
 
 		// check if the message starts with the prefix
 		if (!message.content.startsWith(prefix)) {
@@ -49,7 +49,9 @@ module.exports = {
 		}
 
 		// if the command doesn't exist, return
-		if (!command) return;
+		if (!command) {
+			return;
+		}
 
 		// check for command permissions
 		if (command.permissions) {
@@ -81,8 +83,8 @@ module.exports = {
 				.then((msg) => {
 					setTimeout(() => {
 						msg.delete();
-					}, 3000)
+					}, 3000);
 				});
 		}
 	}
-}
+};

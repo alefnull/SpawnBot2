@@ -15,7 +15,7 @@ module.exports = {
 
 		// build the base embed
 		const embed = new MessageEmbed()
-			.setAuthor(msg.author.username, msg.author.displayAvatarURL())
+			.setAuthor(msg.author.username, msg.author.displayAvatarURL());
 
 		// get command name
 		const cmd = msg.content.slice(prefix.length).split(/ +/)[0];
@@ -100,9 +100,9 @@ module.exports = {
 			return msg.channel.send({ embeds: [embed] });
 		}
 		// check if the user wanted to roll a single die (format <sides>)
-		if (dice.match(/^(\d+)$/)) {
+		if (args[0].match(/^(\d+)$/)) {
 			// get the number of sides
-			let sides = parseInt(dice.match(/^(\d+)$/)[1]);
+			let sides = parseInt(args[0].match(/^(\d+)$/)[1]);
 			// check if the number of sides is valid
 			if (isNaN(sides) || sides < 2 || sides > 100) {
 				embed.setTitle('Dice Roller')
@@ -117,4 +117,4 @@ module.exports = {
 			return msg.channel.send({ embeds: [embed] });
 		}
 	}
-}
+};

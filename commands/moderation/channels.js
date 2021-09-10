@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { blue, magenta, yellow } = require('chalk');
 const { MessageEmbed } = require('discord.js');
-const { log, log_info, log_warn, log_error } = require('../../lib/log');
+const { log_warn } = require('../../lib/log');
 const config = JSON.parse(fs.readFileSync('./data/config.json', 'utf8'));
 
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
 		if (!msg.member.permissions.has(this.permission)) {
 			embed.setDescription(`You do not have permission to use this command.`)
 				.setColor('#ee0000');
-			log_warn(`${blue('[' + message.guild.name + ']')} ${magenta(msg.author.tag)} tried to use the ${yellow(this.name)} command without permission.`);
+			log_warn(`${blue('[' + msg.guild.name + ']')} ${magenta(msg.author.tag)} tried to use the ${yellow(this.name)} command without permission.`);
 			return msg.channel.send({ embeds: [embed] });
 		}
 
@@ -156,4 +156,4 @@ module.exports = {
 				return msg.channel.send({ embeds: [embed] });
 		}
 	}
-}
+};

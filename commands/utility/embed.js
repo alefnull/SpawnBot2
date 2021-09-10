@@ -5,10 +5,10 @@ module.exports = {
 	aliases: [],
 	description: 'Display a test embed',
 	permission: 'SEND_MESSAGES',
-	async run(client, msg, args) {
+	async run(client, msg) {
 		const embed = new MessageEmbed();
 		const twitter_link = 'https://twitter.com/alefnull';
-		the_embed.setTitle('This is an embed title')
+		embed.setTitle('This is an embed title')
 			.setURL(twitter_link)
 			.setAuthor(msg.author.username, msg.author.avatarURL({ dynamic: true }), twitter_link)
 			.setDescription('This is an embed description')
@@ -24,4 +24,4 @@ module.exports = {
 			});
 		msg.channel.send({ embeds: [embed] });
 	}
-}
+};
