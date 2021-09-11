@@ -5,20 +5,20 @@ const { token } = require('./data/config.json');
 const client = new Client({ intents: 13895 });
 
 function start() {
-    // clear console
-    console.clear();
+  // clear console
+  console.clear();
 
-    // create collections for commands and custom commands
-    client.commands = new Collection();
-    client.custom_commands = new Collection();
+  // create collections for commands and custom commands
+  client.commands = new Collection();
+  client.custom_commands = new Collection();
 
-    // run command and event handlers
-    ['commands', 'events'].forEach(handler => {
-        require(`./handlers/${handler}`)(client);
-    });
+  // run command and event handlers
+  ['commands', 'events'].forEach((handler) => {
+    require(`./handlers/${handler}`)(client);
+  });
 
-    // log the bot into discord
-    client.login(token);
+  // log the bot into discord
+  client.login(token);
 }
 
 module.exports = { client, start };

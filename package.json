@@ -1,20 +1,23 @@
 {
-  "name": "spawnbot2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "start": "nodemon ./bin/spawnbot.js -e js,json",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "spawnbot2": "./bin/spawnbot.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "discord.js": "^13.1.0"
-  }
+    "name": "spawnbot2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "nodemon ./bin/spawnbot.js -e js,json",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "bin": {
+        "spawnbot2": "./bin/spawnbot.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "discord.js": "^13.1.0"
+    },
+    "devDependencies": {
+        "eslint-config-prettier": "^8.3.0"
+    }
 }

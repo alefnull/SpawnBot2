@@ -1,29 +1,29 @@
 {
-    "username": "SpawnBot2",
-    "prefix": "!",
-    "token": "xxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxx_xxx_xxxxxxxxxx",
-    "server_settings": {
-        "Server Name Here": {
-            "active": true,
-            "welcome_channel": "greetings",
-            "logging_channel": "log",
-            "channel_restrictions": false,
-            "allowed_channels": [
-                "greetings",
-                "log"
-            ],
-            "default_role": "Member"
-        },
-        "Another Server Name Here": {
-            "active": false,
-            "welcome_channel": "greetings",
-            "logging_channel": "log",
-            "channel_restrictions": true,
-            "allowed_channels": [
-                "greetings",
-                "log"
-            ],
-            "default_role": "Tester"
-        }
+  "username": "SpawnBot2",
+  "prefix": "!",
+  "token": "xxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxx_xxx_xxxxxxxxxx",
+  "server_settings": {
+    "Server Name Here": {
+      "active": true,
+      "welcome_channel": "greetings",
+      "logging_channel": "log",
+      "channel_restrictions": false,
+      "allowed_channels": [
+        "greetings",
+        "log"
+      ],
+      "default_role": "Member"
+    },
+    "Another Server Name Here": {
+      "active": false,
+      "welcome_channel": "greetings",
+      "logging_channel": "log",
+      "channel_restrictions": true,
+      "allowed_channels": [
+        "greetings",
+        "log"
+      ],
+      "default_role": "Tester"
     }
+  }
 }
