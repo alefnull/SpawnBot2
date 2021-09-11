@@ -4,8 +4,11 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon -e js,json",
+    "start": "nodemon -e js,json -x \"node ./bin/spawnbot.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "spawnbot2": "./bin/spawnbot.js"
   },
   "keywords": [],
   "author": "",
