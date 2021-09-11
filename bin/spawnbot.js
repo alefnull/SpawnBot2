@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const { start } = require('../main.js');
+const bot = require('../main.js');
 
-start();
+bot.start();
