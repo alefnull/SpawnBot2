@@ -118,4 +118,5 @@ dist
 .pnp.*
 
 # custom
+package-lock.json
 data/config.json
